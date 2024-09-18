@@ -16,6 +16,11 @@ To install the required dependencies, run:
 ```bash
 pip install -r requirements.txt
 
+## Usage example
+Here's how to integrate the custom augmentation transforms into your PyTorch data pipeline:
+
+```bash
+
 import torch
 from torchvision import transforms
 from transforms import random_rotation, random_shear, random_brightness, clahe_transform
