@@ -1,4 +1,4 @@
-# FT2Dc.py
+# IFT2Dc.py
 import numpy as np
 from PIL import Image, ImageFile
 
