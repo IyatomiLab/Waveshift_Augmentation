@@ -1,4 +1,6 @@
-# Custom Augmentation Transforms for PyTorch
+# Waveshift Augmentation
+<p align="center"><strong>Waveshift Augmentation</strong></p>
+
 
 This repository contains custom data augmentation transforms for PyTorch, organized as modular functions. These transforms can be easily integrated into your data preprocessing pipeline to enhance model robustness and performance.
 
