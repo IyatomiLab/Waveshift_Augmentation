@@ -20,8 +20,10 @@ Here's how to integrate the custom augmentation transforms into your PyTorch dat
 
 ```import torch
 from torchvision import transforms
-from transforms import random_rotation, random_shear, random_brightness, clahe_transform
-from PIL import Image
+import numpy as np
+from PIL import Image, ImageFile
+from transforms import CCWind, FT2Dc, IFT2Dc, PropagatorS
+from Wavehift improt Wavefront_Shift
 import matplotlib.pyplot as plt
 import numpy as np
 
