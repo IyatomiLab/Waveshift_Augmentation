@@ -1,5 +1,6 @@
 # Waveshift.py
 import numpy as np
+import random
 from PIL import Image, ImageFile
 from transforms import CCWind, FT2Dc, IFT2Dc, PropagatorS
 
@@ -24,11 +25,11 @@ class Wavefront_Shift():
         self.lambdaRED = lambdaRED
         self.lambdaGREEN = lambdaGREEN
         self.lambdaBLUE = lambdaBLUE
-        self.z0 = upper_bound
+        self.z0 = random.uniform(1, upper_bound)
     
     def __call__(self, leaf):
         columns, rows = leaf.size
-      
+          
         # Dimension for building propagator
         self.Nx = columns
         self.Ny = rows
