@@ -3,4 +3,5 @@ torchvision
 pillow
 opencv-python
 numpy
+random
 matplotlib
