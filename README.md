@@ -16,15 +16,14 @@ This repository contains our proposed image data augmentation technique, organiz
 - **IFT2Dc:** Applies an inverse Fourier transform to the image.
 - **PropagatorS:** Costructs the wavefront at a given z-distance.
 
+## Approach
+The approximated propagation of the light source (emitted by the target; leaf) and spherical waves created along the direction Z , named “wavefronts.” Our DA technique simulates the camera shifting along the wavefronts to acquire the image merged with light properties observed at that location.
+![Augmentation Approach](Augmentation-approach.png)
+
 ## Installation
 
 To install the required dependencies, run:
-
 `pip install -r requirements.txt`
-
-## Approach
-The approximated propagation of the light source (emitted by the target; leaf) and spherical waves created along the direction Z , named “wavefronts.” Our DA technique simulates the camera shifting along the wavefronts to acquire the image merged with light properties observed at that locatio
-![Augmentation Approach](Augmentation-approach.png)
 
 ## Usage
 Here's how to integrate our data augmentation technique into your PyTorch data pipeline:
