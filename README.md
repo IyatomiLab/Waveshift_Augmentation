@@ -13,14 +13,12 @@ This repository contains custom data augmentation transforms for PyTorch, organi
 
 To install the required dependencies, run:
 
-```bash
-pip install -r requirements.txt```
+`pip install -r requirements.txt`
 
 ## Usage example
 Here's how to integrate the custom augmentation transforms into your PyTorch data pipeline:
 
-```bash
-
+`
 import torch
 from torchvision import transforms
 from transforms import random_rotation, random_shear, random_brightness, clahe_transform
@@ -93,4 +91,4 @@ plt.title("Original Image")
 plt.axis('off')
 
 plt.subplot(1,2,2)
-show_image(transformed_img, "Transformed Image")
+show_image(transformed_img, "Transformed Image")`
