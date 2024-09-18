@@ -37,7 +37,6 @@ from Waveshift improt Wavefront_Shift
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Define the transformation pipeline
 waveshift_transform = Wavefront_Shift(upper_bound=41)
 transform_pipeline = transforms.Compose([
     transforms.Resize((512, 512)),
