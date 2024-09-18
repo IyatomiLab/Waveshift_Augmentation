@@ -1,4 +1,7 @@
 # FT2Dc.py
+import numpy as np
+from PIL import Image, ImageFile
+
 # 2D CENTERED FOURIER TRANSFORM
 def FT2Dc(self, img):
     # 2D array with dimensions equal to the dimensions of leaf image
