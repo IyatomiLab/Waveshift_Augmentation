@@ -6,7 +6,7 @@ This repository contains our proposed image data augmentation technique, organiz
 - [Transformations Included](#transformations)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
+- [Approach](#approach)
 - [Acknowledgements](#acknowledgements)
 
 ## Transformations Included
@@ -21,6 +21,10 @@ This repository contains our proposed image data augmentation technique, organiz
 To install the required dependencies, run:
 
 `pip install -r requirements.txt`
+
+## Approach
+The approximated propagation of the light source (emitted by the target; leaf) and spherical waves created along the direction Z , named “wavefronts.” Our DA technique simulates the camera shifting along the wavefronts to acquire the image merged with light properties observed at that locatio
+![Augmentation Approach](Augmentation-approach.png)
 
 ## Usage
 Here's how to integrate our data augmentation technique into your PyTorch data pipeline:
@@ -79,11 +83,6 @@ plt.axis('off')
 plt.subplot(1,2,2)
 show_image(transformed_img, "Transformed Image")
 ```
-
-## Features
-Here we give an overview of how the propagator looks like in shape for different upper bounds of z and posible effect it induces.
-![Transformation Example](transforms/augmentation_demo.gif)
-
 
 ## Acknowledgements
 This project is currently not licensed. However, the authors have submitted the work for publication to the IEEE ACCESS Journal. For further inquiries or correspondence, please contact Gent Imeraj at gent.imeraj.9y@stu.hosei.ac.jp.
