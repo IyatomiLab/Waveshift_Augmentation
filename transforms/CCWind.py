@@ -1,3 +1,7 @@
+# CCWind.py
+import numpy as np
+from PIL import Image, ImageFile
+
 # CENTER CROP WINDOW OF AN IMAGE
 def CCWind(self, img, size):
     width, height = img.size
