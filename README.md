@@ -1,8 +1,6 @@
 # Waveshift Augmentation
-<p align="center"><strong>Waveshift Augmentation</strong></p>
-
-
-This repository contains custom data augmentation transforms for PyTorch, organized as modular functions. These transforms can be easily integrated into your data preprocessing pipeline to enhance model robustness and performance.
+This repository contains our proposed image data augmentation technique, organized as modular functions. Our method can be easily integrated into your data preprocessing pipeline to enhance model robustness and performance. 
+> The main file in this repository is Waveshift.py.
 
 ## Table of Contents
 - [Transformations Included](#transformations)
@@ -13,10 +11,10 @@ This repository contains custom data augmentation transforms for PyTorch, organi
 
 ## Transformations Included
 
-- **CCWind:** Randomly rotates the image within a specified degree range.
-- **FT2Dc:** Applies a random shear transformation.
-- **IFT2Dc:** Randomly adjusts the brightness of the image.
-- **PropagatorS:** Applies Contrast Limited Adaptive Histogram Equalization for improved contrast.
+- **CCWind:** Square-crops an image to fit the CNN architecture constrain (optional for other uses).
+- **FT2Dc:** Applies a Fourier transform to the image.
+- **IFT2Dc:** Applies an inverse Fourier transform to the image.
+- **PropagatorS:** Costructs the wavefront at a given z-distance.
 
 ## Installation
 
@@ -25,7 +23,7 @@ To install the required dependencies, run:
 `pip install -r requirements.txt`
 
 ## Usage
-Here's how to integrate the custom augmentation transforms into your PyTorch data pipeline:
+Here's how to integrate our data augmentation technique into your PyTorch data pipeline:
 
 ```python
 import torch
@@ -46,12 +44,12 @@ transform_pipeline = transforms.Compose([
 ])
 ```
 
-Then, load an image that you want to apply the waveshift augmentations. Note that the propagator's construct is already determined by the upper bound value of z (default to be 41m).
+Then, load an image that you want to apply the waveshift augmentation. Note that the propagator's construct is already determined as a random number from one up to the upper bound value of z (default to be 41m).
 > We have uploaded a test leaf image for reference.
 
 ```python
 # Load an image
-img_path = 'path_to_your_image.jpg'  # Replace with your image path
+img_path = 'test.JPG'  # Replace with your image path
 img = Image.open(img_path).convert('RGB')
 
 # Apply transformations
@@ -84,6 +82,7 @@ show_image(transformed_img, "Transformed Image")
 
 ## Features
 Here we give an overview of how the propagator looks like in shape for different upper bounds of z and posible effect it induces.
+![Transformation Example](transforms/augmentation_demo.gif)
 
 
 ## Acknowledgements
