@@ -25,7 +25,8 @@ To install the required dependencies, run:
 ## Usage
 Here's how to integrate the custom augmentation transforms into your PyTorch data pipeline:
 
-```import torch
+```python
+import torch
 from torchvision import transforms
 import numpy as np
 from PIL import Image, ImageFile
@@ -40,10 +41,11 @@ transform_pipeline = transforms.Compose([
     transforms.Resize((512, 512)),
     waveshift_transform,
     transforms.ToTensor()
-])```
+]) ```
 
 Then, load an image that you want to apply the waveshift augmentations. Note that the propagator's construct is already determined by the upper bound value of z (default to be 41m).
 > We have uploaded a test leaf image for reference.
+
 ```
 # Load an image
 img_path = 'path_to_your_image.jpg'  # Replace with your image path
