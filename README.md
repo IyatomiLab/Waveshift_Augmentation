@@ -37,12 +37,14 @@ from Waveshift improt Wavefront_Shift
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Define the transformation pipeline
 waveshift_transform = Wavefront_Shift(upper_bound=41)
 transform_pipeline = transforms.Compose([
     transforms.Resize((512, 512)),
     waveshift_transform,
     transforms.ToTensor()
-]) ```
+])
+```
 
 Then, load an image that you want to apply the waveshift augmentations. Note that the propagator's construct is already determined by the upper bound value of z (default to be 41m).
 > We have uploaded a test leaf image for reference.
@@ -77,7 +79,8 @@ plt.title("Original Image")
 plt.axis('off')
 
 plt.subplot(1,2,2)
-show_image(transformed_img, "Transformed Image")```
+show_image(transformed_img, "Transformed Image")
+```
 
 ## Features
 Here we give an overview of how the propagator looks like in shape for different upper bounds of z and posible effect it induces.
