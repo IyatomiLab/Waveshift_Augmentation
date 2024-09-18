@@ -25,7 +25,7 @@ class Wavefront_Shift():
         self.lambdaRED = lambdaRED
         self.lambdaGREEN = lambdaGREEN
         self.lambdaBLUE = lambdaBLUE
-        self.z0 = random.uniform(1, upper_bound)
+        self.upper_bound = upper_bound
     
     def __call__(self, leaf):
         columns, rows = leaf.size
@@ -33,6 +33,7 @@ class Wavefront_Shift():
         # Dimension for building propagator
         self.Nx = columns
         self.Ny = rows
+        self.z0 = random.uniform(1, self.upper_bound)
 
         # Red, Green, Blue channel
         redChannel, greenChannel, blueChannel = leaf.split() 
