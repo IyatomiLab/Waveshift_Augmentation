@@ -49,7 +49,7 @@ transform_pipeline = transforms.Compose([
 Then, load an image that you want to apply the waveshift augmentations. Note that the propagator's construct is already determined by the upper bound value of z (default to be 41m).
 > We have uploaded a test leaf image for reference.
 
-```
+```python
 # Load an image
 img_path = 'path_to_your_image.jpg'  # Replace with your image path
 img = Image.open(img_path).convert('RGB')
@@ -58,7 +58,7 @@ img = Image.open(img_path).convert('RGB')
 transformed_img = transform_pipeline(img)
 ```
 After obtaining the augmented image, visualise the original and the augmented version side by side to see the difference.
-```
+```python
 # Function to display images
 def show_image(tensor_img, title=""):
     img = tensor_img.clone().detach().numpy()
