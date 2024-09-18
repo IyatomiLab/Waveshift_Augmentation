@@ -1,7 +1,9 @@
+# Waveshift.py
 import numpy as np
 from PIL import Image, ImageFile
 from transforms import CCWind, FT2Dc, IFT2Dc, PropagatorS
 
+# Main proposed augmentation code
 class Wavefront_Shift():
     def __init__(self,
                 lambdaRED = 620 * 10**(-9),
