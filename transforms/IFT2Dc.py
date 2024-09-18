@@ -4,6 +4,15 @@ from PIL import Image, ImageFile
 
 # 2D CENTERED INVERSE FOURIER TRANSFORM
 def IFT2Dc(self, img):
+    """
+    Applies two-dimensional inverse fourier transform to the image.
+
+    Args:
+        img: Input image in fourier domain.
+
+    Returns:
+        IFT2D: Input image in spatial domain.
+    """
     # 2D array with dimensions equal to the dimensions of leaf image
     Nx, Ny = img.shape
     f1 = np.zeros((Nx, Ny), dtype=complex)
