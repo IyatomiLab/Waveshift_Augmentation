@@ -1,6 +1,6 @@
 # Waveshift Augmentation
+This repository contains our proposed image data augmentation technique, organized as modular functions. Our method can be easily integrated into your data preprocessing pipeline to enhance model robustness and performance.
 > The main file in this repository is Waveshift.py.
-This repository contains our proposed image data augmentation technique, organized as modular functions. Our method can be easily integrated into your data preprocessing pipeline to enhance model robustness and performance. 
 
 ## Table of Contents
 - [Transformations Included](#transformations)
