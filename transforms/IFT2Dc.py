@@ -1,3 +1,7 @@
+# FT2Dc.py
+import numpy as np
+from PIL import Image, ImageFile
+
 # 2D CENTERED INVERSE FOURIER TRANSFORM
 def IFT2Dc(self, img):
     # 2D array with dimensions equal to the dimensions of leaf image
