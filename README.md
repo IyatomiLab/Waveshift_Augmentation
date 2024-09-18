@@ -14,7 +14,7 @@ This repository contains custom data augmentation transforms for PyTorch, organi
 To install the required dependencies, run:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt```
 
 ## Usage example
 Here's how to integrate the custom augmentation transforms into your PyTorch data pipeline:
