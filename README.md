@@ -14,7 +14,7 @@ This repository contains our proposed image data augmentation technique, organiz
 - **CCWind:** Square-crops an image to fit the CNN architecture constrain (optional for other uses).
 - **FT2Dc:** Applies a Fourier transform to the image.
 - **IFT2Dc:** Applies an inverse Fourier transform to the image.
-- **PropagatorS:** Costructs the wavefront at a given z-distance.
+- **Propagator:** Costructs the wavefront at a given z-distance.
 
 ## Approach
 The approximated propagation of the light source (emitted by the target; leaf) and spherical waves created along the direction Z , named “wavefronts.” Our DA technique simulates the camera shifting along the wavefronts to acquire the image merged with light properties observed at that location.
@@ -33,7 +33,7 @@ import torch
 from torchvision import transforms
 import numpy as np
 from PIL import Image, ImageFile
-from transforms import CCWind, FT2Dc, IFT2Dc, PropagatorS
+from transforms import CCWind, FT2Dc, IFT2Dc, Propagator
 from Waveshift improt Wavefront_Shift
 import matplotlib.pyplot as plt
 import numpy as np
