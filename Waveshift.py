@@ -13,7 +13,7 @@ class Wavefront_Shift():
                 upper_bound = 41):
 
       """
-        Initializes the custom augmentation transform.
+        Initializes our proposed augmentation transform.
 
         Args:
             lambdaRED (float, fixed): The theoretical wavelength for the red channel. Standard is 620 * 10**(-9).
