@@ -2,7 +2,7 @@
 import numpy as np
 import random
 from PIL import Image, ImageFile
-from transforms import CCWind, FT2Dc, IFT2Dc, PropagatorS
+from transforms import CCWind, FT2Dc, IFT2Dc, Propagator
 
 # Main proposed augmentation code
 class Wavefront_Shift():
@@ -46,10 +46,10 @@ class Wavefront_Shift():
         # BLUE = self.CCWind(blueChannel, (self.Np, self.Np))    
         BLUE = blueChannel                  
       
-        # Precompute all Propagators for all the range of Z
-        propRED = self.PropagatorS(self.Nx, self.Ny, self.lambdaRED, self.z0) 
-        propGREEN = self.PropagatorS(self.Nx, self.Ny, self.lambdaGREEN, self.z0 )
-        propBLUE = self.PropagatorS(self.Nx, self.Ny, self.lambdaBLUE, self.z0 ) 
+        # Precompute all Propagator for all the range of Z
+        propRED = self.Propagator(self.Nx, self.Ny, self.lambdaRED, self.z0) 
+        propGREEN = self.Propagator(self.Nx, self.Ny, self.lambdaGREEN, self.z0 )
+        propBLUE = self.Propagator(self.Nx, self.Ny, self.lambdaBLUE, self.z0 ) 
 
         # Propagate the color channels for the respective leaf
         recRED = np.abs(self.IFT2Dc(self.FT2Dc(RED) * propRED))
