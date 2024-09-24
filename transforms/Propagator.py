@@ -10,7 +10,7 @@ def Propagator(self, Nx, Ny, lambda_, z0):
     Args:
         Nx, Ny: The dimensions of the propagaator, same as the input image.
         lambda: the wavelength of light for the chosen channel.
-        z0: the wavefront distance used to construt the propagator shape.
+        z0: the wavefront distance used to construct the propagator shape.
 
     Returns:
         p: The propagator's matrix in fourier domain.
