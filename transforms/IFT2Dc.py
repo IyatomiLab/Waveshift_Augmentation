@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image, ImageFile
 
 # 2D CENTERED INVERSE FOURIER TRANSFORM
-def IFT2Dc(self, img):
+def IFT2Dc(img):
     """
     Applies two-dimensional inverse fourier transform to the image.
 
