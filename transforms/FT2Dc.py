@@ -3,8 +3,8 @@ import numpy as np
 from PIL import Image, ImageFile
 
 # 2D CENTERED FOURIER TRANSFORM
-def FT2Dc(self, img):
-     """
+def FT2Dc(img):
+    """
     Applies two-dimensional fourier transform to the image.
 
     Args:
@@ -25,3 +25,4 @@ def FT2Dc(self, img):
     FT2D = f1 * FT               # Exp factor * Amplitude
     
     return FT2D
+
