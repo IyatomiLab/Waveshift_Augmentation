@@ -3,13 +3,13 @@ This repository contains our proposed image data augmentation technique, organiz
 > The main file in this repository is Waveshift.py.
 
 ## Table of Contents
-- [Transformations Included](#transformations)
+- [Built Modular Functions](#built)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Approach](#approach)
 - [Acknowledgements](#acknowledgements)
 
-## Transformations Included
+## Built Modular Functions
 
 - **CCWind:** Square-crops an image to fit the CNN architecture constrain (optional for other uses).
 - **FT2Dc:** Applies a Fourier transform to the image.
