@@ -72,7 +72,7 @@ plt.imshow(transformed_img)
 plt.title("Augmented Image")
 plt.axis('off')
 ```
-To clearly see the diference, plot the difference imge (by converting both images to numpy arrays)
+To clearly see the diference, plot the difference image (by converting both images to numpy arrays).
 ```python
 # Resize images to the same size
 new_size = (512, 512)  # use transforms.Resize for matching
