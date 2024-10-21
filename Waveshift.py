@@ -12,7 +12,7 @@ class Wavefront_Shift():
                 lambdaBLUE = 450 * 10**(-9),
                 upper_bound = 41):
 
-      """
+        """
         Initializes our proposed augmentation transform.
 
         Args:
@@ -39,22 +39,22 @@ class Wavefront_Shift():
         redChannel, greenChannel, blueChannel = leaf.split() 
 
         # Center crop of the leaf, all channels, already cropped scenario
-        # RED = self.CCWind(redChannel, (self.Np, self.Np)) 
+        # RED = CCWind(redChannel, (self.Np, self.Np)) 
         RED = redChannel                      
-        # GREEN = self.CCWind(greenChannel, (self.Np, self.Np))
+        # GREEN = CCWind(greenChannel, (self.Np, self.Np))
         GREEN = greenChannel                    
-        # BLUE = self.CCWind(blueChannel, (self.Np, self.Np))    
+        # BLUE = CCWind(blueChannel, (self.Np, self.Np))    
         BLUE = blueChannel                  
       
         # Precompute all Propagator for all the range of Z
-        propRED = self.Propagator(self.Nx, self.Ny, self.lambdaRED, self.z0) 
-        propGREEN = self.Propagator(self.Nx, self.Ny, self.lambdaGREEN, self.z0 )
-        propBLUE = self.Propagator(self.Nx, self.Ny, self.lambdaBLUE, self.z0 ) 
+        propRED = Propagator(self.Nx, self.Ny, self.lambdaRED, self.z0) 
+        propGREEN = Propagator(self.Nx, self.Ny, self.lambdaGREEN, self.z0 )
+        propBLUE = Propagator(self.Nx, self.Ny, self.lambdaBLUE, self.z0 ) 
 
         # Propagate the color channels for the respective leaf
-        recRED = np.abs(self.IFT2Dc(self.FT2Dc(RED) * propRED))
-        recGREEN = np.abs(self.IFT2Dc(self.FT2Dc(GREEN) * propGREEN))
-        recBLUE = np.abs(self.IFT2Dc(self.FT2Dc(BLUE) * propBLUE))
+        recRED = np.abs(IFT2Dc(FT2Dc(RED) * propRED))
+        recGREEN = np.abs(IFT2Dc(FT2Dc(GREEN) * propGREEN))
+        recBLUE = np.abs(IFT2Dc(FT2Dc(BLUE) * propBLUE))
 
         # Convert to 8-bit integers
         recRED = recRED.astype(np.uint8)
