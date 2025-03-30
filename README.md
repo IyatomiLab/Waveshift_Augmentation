@@ -15,11 +15,11 @@ This repository contains our proposed image data augmentation technique, organiz
 - **FT2Dc:** Applies a Fourier transform to the image.
 - **IFT2Dc:** Applies an inverse Fourier transform to the image.
 - **PropagatorS:** Costructs the wavefront at a given z-distance, WS 1.0.
-- **PropagatorPSF:** Costructs the wavefront at a given z-distance and with a speciic aperture, WS 2.0.
+- **PropagatorPSF:** Costructs the wavefront at a given z-distance and with a specific aperture, WS 2.0.
 
 ## Approach
 The approximated propagation of the light source (emitted by the target; leaf) and spherical waves created along the direction Z , named “wavefronts.” Our DA technique simulates the camera shifting along the wavefronts, adjusting also the apertrue from which the light passes through, to acquire the image merged with light properties observed at that location.
-![Augmentation Approach](Light properties.PNG)
+![Augmentation Approach](Light_propagation.PNG)
 
 ## Installation
 
