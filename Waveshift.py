@@ -2,7 +2,7 @@
 import numpy as np
 import random
 from PIL import Image, ImageFile
-from transforms import CCWind, FT2Dc, IFT2Dc, Propagator
+from transforms import CCWind, FT2Dc, IFT2Dc, PropagatorS, PropagatorPSF
 
 # Main proposed augmentation code
 class Wavefront_Shift():
