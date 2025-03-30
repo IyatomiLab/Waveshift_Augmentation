@@ -107,6 +107,29 @@ plt.axis('off')
 plt.show()
 ```
 
+## Exploring Extended Hyperparameter Configurations in WS 2.0  
+
+Beyond the physically meaningful regime of real, non-negative (z, R) values, we investigated a wider range of hyperparameter combinations to assess whether the WS 2.0 propagator maintains structural consistency under theoretical extensions. Figure A1 visualizes a systematic sweep through both real (positive and negative) and imaginary values.  
+
+- **Sign-inverted configurations**—such as (−z, R) and (z, −R)—retain both intensity structure and propagation phase in Fourier space, generating mirrored patterns that remain consistent with the original physical formulation.  
+
+- **Imaginary-valued configurations**—where z → jz and R → jR—yield distinct surface behaviors. Imaginary z values result in inverse propagators with characteristics akin to high-pass filtering. Conversely, imaginary R disrupts the diffraction structure, leading to unstable or incoherent patterns compared to the physically derived formulation.  
+
+While these configurations are **not used** in our practical augmentation pipeline, they illustrate the **sensitivity and constraints** of the WS 2.0 propagator. This underscores that its expressive power originates from its physical foundation, distinguishing it from arbitrary mathematical alterations that lack interpretability, stability, or practical benefit.  
+
+#### **1. Sign-Inverted (−z, R) Configuration**  
+![Sign-Inverted (-z, R)](path/to/your-first-gif.gif)  
+
+#### **2. Sign-Inverted (z, −R) Configuration**  
+![Sign-Inverted (z, -R)](path/to/your-second-gif.gif)  
+
+#### **3. Imaginary z (jz) Propagation**  
+![Imaginary z (jz)](path/to/your-third-gif.gif)  
+
+#### **4. Imaginary R (jR) Propagation**  
+![Imaginary R (jR)](path/to/your-fourth-gif.gif)  
+
+
 ## Acknowledgements
 
 This project is currently not licensed. The authors have published **WS 1.0** in *IEEE Access*, and **WS 2.0** is submitted to *Electronics*. For inquiries, please contact Gent Imeraj at gent.imeraj.9y@stu.hosei.ac.jp.
