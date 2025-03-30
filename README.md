@@ -14,11 +14,12 @@ This repository contains our proposed image data augmentation technique, organiz
 - **CCWind:** Square-crops an image to fit the CNN architecture constrain (optional for other uses).
 - **FT2Dc:** Applies a Fourier transform to the image.
 - **IFT2Dc:** Applies an inverse Fourier transform to the image.
-- **Propagator:** Costructs the wavefront at a given z-distance.
+- **PropagatorS:** Costructs the wavefront at a given z-distance, WS 1.0.
+- **PropagatorPSF:** Costructs the wavefront at a given z-distance and with a speciic aperture, WS 2.0.
 
 ## Approach
-The approximated propagation of the light source (emitted by the target; leaf) and spherical waves created along the direction Z , named “wavefronts.” Our DA technique simulates the camera shifting along the wavefronts to acquire the image merged with light properties observed at that location.
-![Augmentation Approach](Augmentation-approach.png)
+The approximated propagation of the light source (emitted by the target; leaf) and spherical waves created along the direction Z , named “wavefronts.” Our DA technique simulates the camera shifting along the wavefronts, adjusting also the apertrue from which the light passes through, to acquire the image merged with light properties observed at that location.
+![Augmentation Approach](Light properties.PNG)
 
 ## Installation
 
@@ -33,7 +34,7 @@ import torch
 from torchvision import transforms
 import numpy as np
 from PIL import Image, ImageFile
-from transforms import CCWind, FT2Dc, IFT2Dc, Propagator
+from transforms import CCWind, FT2Dc, IFT2Dc, PropagatorS, PropagatorPSF
 from Waveshift import Wavefront_Shift
 import matplotlib.pyplot as plt
 import numpy as np
@@ -46,7 +47,7 @@ transform_pipeline = transforms.Compose([
 ])
 ```
 
-Then, load an image that you want to apply the waveshift augmentation. Note that the propagator's construct is already determined as a random number from one up to the upper bound value of z (default to be 41m).
+Then, load an image that you want to apply the waveshift augmentation. Note that the propagator's construct is already determined as a random number from one up to the upper bound value of z (default to be 41m), and th aperture radius is set to be 0.01.
 > We have uploaded a test leaf image for reference.
 
 ```python
