@@ -117,17 +117,29 @@ Beyond the physically meaningful regime of real, non-negative (z, R) values, we 
 
 While these configurations are **not used** in our practical augmentation pipeline, they illustrate the **sensitivity and constraints** of the WS 2.0 propagator. This underscores that its expressive power originates from its physical foundation, distinguishing it from arbitrary mathematical alterations that lack interpretability, stability, or practical benefit.  
 
-#### **1. Original (z, R) Configuration**  
-![Original (z, R)](PropagatorPSF_0.01.gif)  
+<table>
+  <tr>
+    <td align="center">
+      <b>Original (z, R) Configuration</b><br>
+      <img src="PropagatorPSF_0.01.gif" width="300">
+    </td>
+    <td align="center">
+      <b>Sign-Inverted (z, −R) Configuration</b><br>
+      <img src="PropagatorPSF_acneg_zpos.gif" width="300">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Imaginary z (jz) and Real R</b><br>
+      <img src="PropagatorPSF_inv_acimag_zreal.gif" width="300">
+    </td>
+    <td align="center">
+      <b>Imaginary z (jz) and R (jR)</b><br>
+      <img src="PropagatorPSF_inv_acimag_zimag.gif" width="300">
+    </td>
+  </tr>
+</table>
 
-#### **2. Sign-Inverted (z, −R) Configuration**  
-![Sign-Inverted (z, -R)](PropagatorPSF_acneg_zpos.gif)  
-
-#### **3. Imaginary z (jz) and real R Propagation**  
-![Imaginary z (jz) and real R](PropagatorPSF_inv_acimag_zreal.gif)  
-
-#### **4. Imaginary z (jz) and R (jR) Propagation**  
-![Imaginary z (jz) and R (jR)](PropagatorPSF_inv_acimag_zimag.gif)  
 
 
 ## Acknowledgements
