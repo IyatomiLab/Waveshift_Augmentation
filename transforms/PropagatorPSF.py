@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.special import j1
 
-def PropagatorPSF(Nx, Ny, lambda_, z0, aperture_coeff):
+def PropagatorPSF(Nx, Ny, lambda_, z0, aperture_coeff=0.01):
     """
     Constructs the Airy Disk PSF propagator for a circular aperture.
 
