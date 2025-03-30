@@ -1,9 +1,9 @@
-# Propagator.py
+# PropagatorS.py
 import numpy as np
 from PIL import Image, ImageFile
 
 # WAVEFRONT PROPAGATION FOR SPHERICAL WAVES IN PARAXIAL APPROXIMATION
-def Propagator(Nx, Ny, lambda_, z0):
+def PropagatorS(Nx, Ny, lambda_, z0):
     """
     Constructs a propagator shape for a given wavefront distance, at z0.
 
