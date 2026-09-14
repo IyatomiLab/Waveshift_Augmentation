@@ -51,19 +51,19 @@ class Wavefront_Shift():
         # BLUE = CCWind(blueChannel, (self.Np, self.Np))    
         BLUE = blueChannel                  
       
-        if mode_ == "s":
+        if self.mode_ == "s":
             #######################################################################
             # Precompute all Propagators for all the range of Z
-            propRED = self.PropagatorS(self.Nx, self.Ny, self.lambdaRED, self.z0) 
-            propGREEN = self.PropagatorS(self.Nx, self.Ny, self.lambdaGREEN, self.z0 )
-            propBLUE = self.PropagatorS(self.Nx, self.Ny, self.lambdaBLUE, self.z0 ) 
+            propRED = PropagatorS(self.Nx, self.Ny, self.lambdaRED, self.z0) 
+            propGREEN = PropagatorS(self.Nx, self.Ny, self.lambdaGREEN, self.z0 )
+            propBLUE = PropagatorS(self.Nx, self.Ny, self.lambdaBLUE, self.z0 ) 
 
-        elif mode_ == "psf":
+        elif self.mode_ == "psf":
             #######################################################################
             # Precompute all Propagators for all the range of Z
-            propRED = self.PropagatorPSF(self.Nx, self.Ny, self.lambdaRED, self.z0, self.aperture_coeff) 
-            propGREEN = self.PropagatorPSF(self.Nx, self.Ny, self.lambdaGREEN, self.z0, self.aperture_coeff)
-            propBLUE = self.PropagatorPSF(self.Nx, self.Ny, self.lambdaBLUE, self.z0, self.aperture_coeff)
+            propRED = PropagatorPSF(self.Nx, self.Ny, self.lambdaRED, self.z0, self.aperture_coeff) 
+            propGREEN = PropagatorPSF(self.Nx, self.Ny, self.lambdaGREEN, self.z0, self.aperture_coeff)
+            propBLUE = PropagatorPSF(self.Nx, self.Ny, self.lambdaBLUE, self.z0, self.aperture_coeff)
  
 
         # Propagate the color channels for the respective leaf
