@@ -125,9 +125,8 @@ out = waveshift(image, version="ws1", z=20.0, compatibility="legacy")
 | uint8 cast | truncate **and wrap** (259 -> 3) | clip to `[0, 255]` |
 | inputs | square RGB only | grayscale/RGB, square/rectangular, PIL/NumPy |
 
-The original implementation is also preserved verbatim at `waveshift.legacy`.
-Both quirks are deliberate and pinned by regression tests — see
-[docs/theory.md](docs/theory.md#legacy-vs-modern-implementation).
+This table compares software implementation modes. It does not change the published Waveshift formulation. Use legacy mode to reproduce the original public-code behavior; use modern mode for safer and more flexible new experiments. Both quirks are deliberate and pinned by regression tests — see
+[docs/theory.md](docs/theory.md#legacy-vs-modern-implementation). 
 
 ## Reproducibility
 
