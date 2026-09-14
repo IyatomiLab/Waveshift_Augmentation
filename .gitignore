@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+*.py[cod]
+.pytest_cache/
+
+# Build artefacts
+*.egg-info/
+build/
+dist/
+
+# Generated example output (regenerate with examples/*.py)
+examples/_output/
+
+# Local research material (MATLAB sources, thesis figure generators).
+# Kept out of the published repository; not part of the package.
+references/

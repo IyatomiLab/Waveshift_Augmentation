@@ -1,8 +1,9 @@
-# test_waveshift_regression.py
-# Golden-value regression tests for Wavefront_Shift.
+# test_legacy_regression.py
+# Golden-value regression tests for the PUBLISHED implementation.
 #
-# The fingerprints below were captured from the current implementation at
-# commit "Fix runnable Waveshift smoke path" (Phase 3a). They encode the
+# These freeze the original GitHub snapshot, now vendored at
+# waveshift.legacy. The fingerprints were captured at commit
+# "Fix runnable Waveshift smoke path" (Phase 3a) and encode the
 # published-compatible behavior, INCLUDING its known quirks:
 #   - propagator grid arange(N) - N//2 - 1 (off by one vs the MATLAB reference)
 #   - uint8 conversion by truncation with modular wraparound (no clipping)
@@ -18,8 +19,7 @@ import pytest
 from PIL import Image
 
 from conftest import APERTURE_FIXED, IMAGE_SIZE, Z_FIXED
-from transforms import FT2Dc, IFT2Dc, PropagatorS
-from Waveshift import Wavefront_Shift
+from waveshift.legacy import FT2Dc, IFT2Dc, PropagatorS, Wavefront_Shift
 
 # Golden fingerprints: test.JPG -> RGB -> resize(512, 512), z0 = 20.0.
 GOLDEN = {

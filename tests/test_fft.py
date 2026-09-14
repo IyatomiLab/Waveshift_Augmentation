@@ -7,7 +7,7 @@ import numpy as np
 import pytest
 from PIL import Image
 
-from transforms import FT2Dc, IFT2Dc, PropagatorPSF, PropagatorS
+from waveshift.legacy import FT2Dc, IFT2Dc, PropagatorPSF, PropagatorS
 
 # Round-trip error measured on this implementation is ~1e-13 for N <= 128.
 # The tolerance is deliberately loose enough to survive BLAS/FFT backend

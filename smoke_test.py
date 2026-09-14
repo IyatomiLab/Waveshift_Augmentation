@@ -1,35 +1,50 @@
-# smoke_test.py
-# Minimal runnability check for Waveshift.
-# Verifies only that both modes execute and return a well-formed image.
-# Does NOT assert any scientific/numerical behavior.
+# Minimal runnability check. Verifies that the API executes on the
+# supported input types and that legacy reproduction still works.
 
 import numpy as np
 from PIL import Image
 
-from Waveshift import Wavefront_Shift
+from waveshift import WaveShift, apply_to_regions, waveshift
 
 IMG_PATH = "test.JPG"
 SIZE = (512, 512)
 
 
-def check(mode_):
+def describe(out):
+    array = np.asarray(out)
+    kind = f"PIL {out.mode} {out.size}" if isinstance(out, Image.Image) else "ndarray"
+    return f"{kind} -> {array.shape} {array.dtype} [{array.min()}, {array.max()}]"
+
+
+def check(label, out, expected_shape):
+    array = np.asarray(out)
+    assert array.shape == expected_shape, f"{label}: {array.shape} != {expected_shape}"
+    assert array.dtype == np.uint8, f"{label}: dtype {array.dtype}"
+    print(f"  {label:32s} OK  {describe(out)}")
+
+
+def main():
+    print("Waveshift smoke test")
     leaf = Image.open(IMG_PATH).convert("RGB").resize(SIZE)
-    out = Wavefront_Shift(mode_=mode_)(leaf)
+    rect = Image.open(IMG_PATH).convert("RGB").resize((640, 480))
 
-    assert isinstance(out, Image.Image), f"{mode_}: not a PIL image"
-    assert out.mode == "RGB", f"{mode_}: mode is {out.mode}, expected RGB"
-    assert out.size == SIZE, f"{mode_}: size is {out.size}, expected {SIZE}"
+    check("modern ws1 RGB square", WaveShift(version="ws1", z=20)(leaf), (512, 512, 3))
+    check("modern ws2 RGB square",
+          WaveShift(version="ws2", z=20, aperture=0.01)(leaf), (512, 512, 3))
+    check("modern ws1 RGB rectangular",
+          WaveShift(version="ws1", z=20)(rect), (480, 640, 3))
+    check("modern ws1 grayscale",
+          WaveShift(version="ws1", z=20)(rect.convert("L")), (480, 640))
+    check("modern ws1 numpy array",
+          WaveShift(version="ws1", z=20)(np.asarray(rect)), (480, 640, 3))
+    check("legacy ws1 (published path)",
+          waveshift(leaf, version="ws1", z=20, compatibility="legacy"), (512, 512, 3))
+    check("ws2.5 ROI",
+          apply_to_regions(leaf, [(50, 50, 300, 280)], version="ws2", z=20,
+                           aperture=0.01), (512, 512, 3))
 
-    arr = np.array(out)
-    assert arr.dtype == np.uint8, f"{mode_}: dtype is {arr.dtype}, expected uint8"
-    assert arr.shape == (SIZE[1], SIZE[0], 3), f"{mode_}: shape is {arr.shape}"
-
-    print(f"  mode_={mode_!r:6s} OK  size={out.size} mode={out.mode} "
-          f"dtype={arr.dtype} range=[{arr.min()}, {arr.max()}]")
+    print("PASS")
 
 
 if __name__ == "__main__":
-    print("Waveshift smoke test")
-    check("s")      # WS 1.0
-    check("psf")    # WS 2.0
-    print("PASS")
+    main()
